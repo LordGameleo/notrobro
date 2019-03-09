@@ -19,13 +19,13 @@ script:
   - kodi-addon-checker --branch=leia  -- service.notrobro/; fi
   - py.test -v
 
-# jobs:
-#   include:
-#     - python: "2.7"
-#       dist: xenial
-#       sudo: required
-#   allow_failures:
-#     - python: "nightly"
-#   install:
-#       - pip install pytest mock
-#   script: py.test -v
+jobs:
+  include:
+    - python: "2.7"
+      dist: xenial
+      sudo: required
+  allow_failures:
+    - python: "nightly"
+  install:
+    - pip install pytest mock
+  script: py.test -v
